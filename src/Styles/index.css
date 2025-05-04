@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap');
 
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --primary: #121212;
-  --secondary: #fefefe;
-  --background: #f9f9f9;
+  --primary: #745df5;
+  --secondary: #f9f9f9;
+  --background: #fefefe;
   --foreground: #f9f9f9;
   --main: #444444;
   --muted: #777;
@@ -15,7 +15,7 @@
 }
 
 .dark {
-  --primary: #fefefe;
+  --primary: #745df5;
   --secondary: #212121 ;
   --background: #121212 ;
   --foreground: #313131;
@@ -25,7 +25,7 @@
 }
 
 @theme {
-  --font-sans: 'Instrument Sans', sans-serif;
+  --font-sans: 'Inter', sans-serif;
   --font-sora: 'Sora', sans-serif;
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
@@ -58,11 +58,11 @@ html {
 
 button,
 .btn {
-  @apply text-sm cursor-pointer font-semibold font-sora flex items-center justify-center gap-2 disabled:opacity-50;
+  @apply text-sm cursor-pointer font-semibold flex items-center justify-center gap-2 disabled:opacity-50;
 }
 
 .btn-primary {
-  @apply bg-primary text-white dark:text-black;
+  @apply bg-primary text-white ;
 }
 
 .input {

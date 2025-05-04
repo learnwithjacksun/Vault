@@ -1,49 +1,69 @@
-import { useCountStore } from "@/Stores";
 import { ThemeToggle } from "@/Components/UI";
-import { ActionButtons, Libraries } from "@/Components/Main";
-import { Github } from "lucide-react";
-
+import { CircleCheck, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  const { count } = useCountStore();
-
   return (
-    <div className="layout relative flex flex-col gap-2 min-h-[100dvh]">
-      <header className="w-full h-[60px] flex justify-between items-center">
+    <>
+      <div className="fixed top-8 right-8">
         <ThemeToggle />
-        <a
-          href="https://github.com/learnwithjacksun/jacksun-react-template"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary px-4 py-2 rounded-full gap-2"
-        >
-          <Github size={20} />
-          <span>Use Template</span>
-        </a>
-      </header>
-      <div className="center flex flex-col gap-4 text-center border-b border-line py-7">
-        <div className="center gap-2">
-          <img
-            src="/react.svg"
-            alt="logo"
-            width={80}
-            height={80}
-            className="hover:rotate-120 transition-all duration-300"
-          />
-          <div className="h-[80px] w-[80px] bg-secondary rounded-xl border border-line text-4xl font-sora font-bold flex items-center justify-center">{count}</div>
-        </div>
-        <div>
-          <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-purple-500 text-4xl md:text-5xl font-sora font-bold">Jacksun React Template </h1>
-          <p className="text-muted">
-            A template for building a React app with Tailwind CSS and TypeScript
-          </p>
-        </div>
-
-        <ActionButtons />
       </div>
 
-      <Libraries />
-    </div>
+      <div className="layout mt-20">
+        <div className="flex items-center justify-center gap-2">
+          <Shield size={32} strokeWidth={3} className="text-primary" />
+          <h3 className="text-2xl font-bold font-sora">Quest Lock</h3>
+        </div>
+
+        <div className="text-center mt-10">
+          <span className="bg-secondary p-2 px-3 rounded-full border border-line text-muted text-sm">
+            🔐 Secure, Simple, Portable
+          </span>
+          <h1 className="text-4xl capitalize inline-flex md:text-6xl mt-4 font-sora font-bold bg-clip-text text-transparent bg-gradient-to-r from-main to-primary">
+            Your private vault for sensitive information
+          </h1>
+        </div>
+
+        <div className="text-left center">
+          <ul className="text-left text-sm text-muted mt-4 space-y-2">
+            <li className="flex items-center gap-2">
+              <CircleCheck size={20} className="text-green-600" />
+              Store NIN, BVN,passwords, etc.
+            </li>
+            <li className="flex items-center gap-2">
+              <CircleCheck size={20} className="text-green-600" />
+              Protected by end-to-end encryption
+            </li>
+            <li className="flex items-center gap-2">
+              <CircleCheck size={20} className="text-green-600" />
+              Login with email OTP
+            </li>
+            <li className="flex items-center gap-2">
+              <CircleCheck size={20} className="text-green-600" />
+              Only you can view your data
+            </li>
+          </ul>
+        </div>
+
+        <div className="center flex-col gap-2 border-t border-line pt-4 space-y-4 mt-10 pb-10">
+          <p>Are you a new user?</p>
+          <div className="flex items-center gap-2 md:flex-row flex-col">
+            <Link
+              to="/signup"
+              className="btn-primary btn text-secondary min-w-[200px] py-3 rounded-lg"
+            >
+              Yes, Create Vault
+            </Link>
+            <Link
+              to="/login"
+              className="bg-secondary btn text-main min-w-[200px] py-3 rounded-lg"
+            >
+              No, Login
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
