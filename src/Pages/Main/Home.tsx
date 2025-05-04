@@ -15,11 +15,11 @@ const Home = () => {
           <h3 className="text-2xl font-bold font-sora">Quest Lock</h3>
         </div>
 
-        <div className="text-center mt-10">
+        <div className="text-center mt-10 w-full">
           <span className="bg-secondary p-2 px-3 rounded-full border border-line text-muted text-sm">
             🔐 Secure, Simple, Portable
           </span>
-          <h1 className="text-4xl capitalize inline-flex md:text-6xl mt-4 font-sora font-bold bg-clip-text text-transparent bg-gradient-to-r from-main to-primary">
+          <h1 className="text-4xl capitalize inline-flex md:text-6xl mt-4 font-sora font-bold gradient-text">
             Your private vault for sensitive information
           </h1>
         </div>
@@ -49,7 +49,7 @@ const Home = () => {
           <p>Are you a new user?</p>
           <div className="flex items-center gap-2 md:flex-row flex-col">
             <Link
-              to="/signup"
+              to="/new"
               className="btn-primary btn text-secondary min-w-[200px] py-3 rounded-lg"
             >
               Yes, Create Vault

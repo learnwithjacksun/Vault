@@ -66,16 +66,16 @@ button,
 }
 
 .input {
-  @apply bg-foreground text-sm border border-line rounded-lg px-4 h-10 font-light focus:outline-none focus:border-primary invalid:border-red-500;
+  @apply bg-secondary text-sm border border-line rounded-lg px-4 h-10 font-light focus:outline-none focus:border-main invalid:border-red-500;
 }
 .message {
-  @apply bg-foreground text-sm border border-line rounded-lg px-4 py-2 font-light focus:outline-none focus:border-primary invalid:border-red-500;
+  @apply bg-foreground text-sm border border-line rounded-lg px-4 py-2 font-light focus:outline-none focus:border-main invalid:border-red-500;
 }
 .input-2 {
-  @apply  text-sm border border-line rounded-lg px-4 h-10 font-light focus:outline-none focus:border-primary invalid:border-red-500;
+  @apply  text-sm border border-line rounded-lg px-4 h-10 font-light focus:outline-none focus:border-main invalid:border-red-500;
 }
 .message-2 {
-  @apply  text-sm border border-line rounded-lg px-4 py-2 font-light focus:outline-none focus:border-primary invalid:border-red-500;
+  @apply  text-sm border border-line rounded-lg px-4 py-2 font-light focus:outline-none focus:border-main invalid:border-red-500;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
@@ -85,3 +85,8 @@ button,
 .hide-scrollbar::-webkit-scrollbar-thumb {
   @apply hidden;
 }
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-main to-primary;
+}
+
