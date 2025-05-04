@@ -16,8 +16,8 @@
 
 .dark {
   --primary: #745df5;
-  --secondary: #212121 ;
-  --background: #121212 ;
+  --secondary: #212121;
+  --background: #121212;
   --foreground: #313131;
   --main: #FFFFFF;
   --muted: #999999;
@@ -62,20 +62,28 @@ button,
 }
 
 .btn-primary {
-  @apply bg-primary text-white ;
+  @apply bg-primary text-white;
 }
+
+.btn-secondary {
+  @apply dark:bg-white dark:text-[#212121] bg-[#212121] text-white;
+}
+
 
 .input {
   @apply bg-secondary text-sm border border-line rounded-lg px-4 h-10 font-light focus:outline-none focus:border-main invalid:border-red-500;
 }
+
 .message {
   @apply bg-foreground text-sm border border-line rounded-lg px-4 py-2 font-light focus:outline-none focus:border-main invalid:border-red-500;
 }
+
 .input-2 {
-  @apply  text-sm border border-line rounded-lg px-4 h-10 font-light focus:outline-none focus:border-main invalid:border-red-500;
+  @apply text-sm border border-line rounded-lg px-4 h-10 font-light focus:outline-none focus:border-main invalid:border-red-500;
 }
+
 .message-2 {
-  @apply  text-sm border border-line rounded-lg px-4 py-2 font-light focus:outline-none focus:border-main invalid:border-red-500;
+  @apply text-sm border border-line rounded-lg px-4 py-2 font-light focus:outline-none focus:border-main invalid:border-red-500;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
@@ -89,4 +97,3 @@ button,
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-main to-primary;
 }
-

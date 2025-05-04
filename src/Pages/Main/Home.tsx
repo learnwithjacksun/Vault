@@ -50,13 +50,13 @@ const Home = () => {
           <div className="flex items-center gap-2 md:flex-row flex-col">
             <Link
               to="/new"
-              className="btn-primary btn text-secondary min-w-[200px] py-3 rounded-lg"
+              className="btn-primary btn text-secondary min-w-[250px] py-3 rounded-lg"
             >
               Yes, Create Vault
             </Link>
             <Link
               to="/login"
-              className="bg-secondary btn text-main min-w-[200px] py-3 rounded-lg"
+              className="bg-secondary btn text-main min-w-[250px] py-3 rounded-lg"
             >
               No, Login
             </Link>

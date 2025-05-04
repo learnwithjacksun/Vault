@@ -1,13 +1,14 @@
-export const libraries = [
-    "Zustand",
-    "React Router",
-    "React Query",
-    "React Hook Form",
-    "Sonner",
-    "Lucide-React",
-    "Tailwind CSS",
-    "TypeScript",
-    "axios",
-    "Framer Motion",
-    "Zod",
+export const tab_buttons = [
+    {
+        id: "single",
+        label: "Single"
+    },
+    {
+        id: "group",
+        label: "Group"
+    },
+    {
+        id: "images",
+        label: "Images"
+    },
 ]
