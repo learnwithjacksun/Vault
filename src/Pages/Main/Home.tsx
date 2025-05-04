@@ -12,7 +12,7 @@ const Home = () => {
       <div className="layout mt-20">
         <div className="flex items-center justify-center gap-2">
           <Shield size={32} strokeWidth={3} className="text-primary" />
-          <h3 className="text-2xl font-bold font-sora">Quest Lock</h3>
+          <h3 className="text-2xl font-bold font-sora">Quest Vault</h3>
         </div>
 
         <div className="text-center mt-10 w-full">
