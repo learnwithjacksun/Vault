@@ -1,15 +1,36 @@
 import { Search } from "@/Components/UI";
 import { DashboardLayout } from "@/Layouts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { tab_buttons } from "@/Constants/data";
 import clsx from "clsx";
 import { ListFilter } from "lucide-react";
 import { AddItem, SingleItems } from "@/Components/Dashboard";
 import GroupItems from "@/Components/Dashboard/GroupItems";
 import ImageItems from "@/Components/Dashboard/ImageItems";
+import { toast } from "sonner";
 const Dashboard = () => {
   const [search, setSearch] = useState("");
   const [tab, setTab] = useState("single");
+  const [singleItems, setSingleItems] = useState<SingleItems[] | null>(null);
+
+  useEffect(() => {
+    const getItems = () => {
+      try {
+        const items = JSON.parse(localStorage.getItem("singleItem") || "[]");
+        if (items) {
+          setSingleItems(items);
+        }
+      } catch (error) {
+        console.log(error);
+        toast.error("Failed to get items");
+      }
+    };
+    return () => getItems();
+  }, []);
+
+  const filteredSingleItems = singleItems?.filter((item) =>
+    item.title.toLowerCase().includes(search.toLowerCase())
+  );
   return (
     <>
       <DashboardLayout>
@@ -35,25 +56,27 @@ const Dashboard = () => {
         </div>
 
         {tab === "single" && (
-            <>
-            <SingleItems />
-            <SingleItems />
-            </>
+          <>
+            <SingleItems
+              items={filteredSingleItems}
+              setSingleItems={setSingleItems}
+            />
+          </>
         )}
 
-        {tab === "group" &&(
+        {tab === "group" && (
           <>
-          <GroupItems/>
+            <GroupItems />
           </>
         )}
         {tab === "images" && (
           <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
-            <ImageItems/>
+            <ImageItems />
           </div>
         )}
       </DashboardLayout>
 
-      <AddItem/>
+      <AddItem />
     </>
   );
 };

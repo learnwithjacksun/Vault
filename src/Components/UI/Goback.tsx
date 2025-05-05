@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Goback = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const authRoutes = ["/auth", "/verify", "/passcode", "/security"];
+  const authRoutes = ["/new", "/login", "/recovery", "/security"];
   const isAuthRoute = authRoutes.includes(location.pathname);
 
   const handleBack = () => {

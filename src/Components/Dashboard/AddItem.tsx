@@ -32,7 +32,7 @@ const list = [
 ]
 
 const AddItem = () => {
-    const [isShow, setShow] = useState(true)
+    const [isShow, setShow] = useState(false)
   return (
     <>
     <button onClick={() => setShow(true)} className="btn-secondary h-12 rounded-full px-5 shadow-2xl fixed bottom-4 left-1/2 -translate-x-1/2">
